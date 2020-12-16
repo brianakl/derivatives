@@ -1,4 +1,7 @@
-
+"""
+This is a small program that takes the first and second 
+derivatives of a set function and plots it on a graph
+"""
 from pylab import *
 from scipy import misc
 import numpy as np
@@ -6,15 +9,16 @@ import numpy as np
 
 ax = subplot()
 
-def fonction(x):
-    return 3*x*x*x + 2*x*x+1
+#function that is being computed
+def func(x):
+    return 3 * (x**3) + 2 * (x**2) +1
 
 x = arange(-2.0, 2.0, 0.01)
 
-y = fonction(x)
+y = func(x)
 
-yp = misc.derivative(fonction, x)
-ypp = misc.derivative(fonction, x,n=2)
+yp = misc.derivative(func, x)
+ypp = misc.derivative(func, x,n=2)
 
 
 grid(True)
